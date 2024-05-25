@@ -14,7 +14,7 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       const response = await axios.get(
-        "https://jobseeker-backend-zeta.vercel.app/api/v1/user/logout",
+        `${import.meta.env.VITE_API_URL}v1/user/logout`,
         {
           withCredentials: true,
         }

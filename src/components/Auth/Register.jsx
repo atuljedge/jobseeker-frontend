@@ -28,7 +28,7 @@ const Register = () => {
     // console.log("regiesterd")
     try {
       const { data } = await axios.post(
-        "https://jobseeker-backend-zeta.vercel.app/api/v1/user/register",
+        `${import.meta.env.VITE_API_URL}v1/user/register`,
         { name, phone, email, role, password }
 
       );

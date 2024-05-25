@@ -12,7 +12,7 @@ const Jobs = () => {
   useEffect(() => {
     try {
       axios
-        .get("https://jobseeker-backend-zeta.vercel.app/api/v1/job/getallJob", {
+        .get( `${import.meta.env.VITE_API_URL}v1/job/getallJob`, {
           withCredentials: true,
         })
         .then((res) => {

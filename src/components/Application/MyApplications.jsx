@@ -49,7 +49,7 @@ const MyApplications = () => {
   const deleteApplication = (id) => {
     try {
       axios
-        .delete(`https://jobseeker-backend-zeta.vercel.app/api/v1/application/delete/${id}`, {
+        .delete(`${import.meta.env.VITE_API_URL}v1/application/delete/${id}`, {
           withCredentials: true,
         })
         .then((res) => {

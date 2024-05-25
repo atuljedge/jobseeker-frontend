@@ -19,7 +19,7 @@ const MyJobs = () => {
     const fetchJobs = async () => {
       try {
         const { data } = await axios.get(
-          "https://jobseeker-backend-zeta.vercel.app/api/v1/job/getmyJobs",
+          `${import.meta.env.VITE_API_URL}v1/job/getmyJobs`,
           { withCredentials: true }
         );
         if(data.myjobs){
@@ -52,7 +52,7 @@ const MyJobs = () => {
   const handleUpdateJob = async (jobId) => {
     const updatedJob = myJobs.find((job) => job._id === jobId);
     await axios
-      .put(`http://localhost:3000/api/v1/job/updateJob/${jobId}`, updatedJob, {
+      .put(`${import.meta.env.VITE_API_URL}v1/job/updateJob/${jobId}`, updatedJob, {
         withCredentials: true,
       })
       .then((res) => {
@@ -68,7 +68,7 @@ const MyJobs = () => {
   //Function For Deleting Job
   const handleDeleteJob = async (jobId) => {
     await axios
-      .delete(`http://localhost:3000/api/v1/job/delete/${jobId}`, {
+      .delete(`${import.meta.env.VITE_API_URL}v1/job/delete/${jobId}`, {
         withCredentials: true,
       })
       .then((res) => {

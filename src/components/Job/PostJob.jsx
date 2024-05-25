@@ -32,7 +32,7 @@ const PostJob = () => {
     }
     await axios
       .post(
-        "https://jobseeker-backend-zeta.vercel.app/api/v1/job/postJob",
+        `${import.meta.env.VITE_API_URL}v1/job/postJob`,
         fixedSalary.length >= 4
           ? {
               title,
