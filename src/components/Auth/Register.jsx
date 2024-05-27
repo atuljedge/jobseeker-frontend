@@ -11,7 +11,6 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Context } from "../../main";
 
-
 const Register = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -22,7 +21,6 @@ const Register = () => {
   // eslint-disable-next-line no-unused-vars
   const { isAuthorized, setIsAuthorized, user, setUser } = useContext(Context);
   
-
   async function handleRegister(e){
     e.preventDefault();
     // console.log("regiesterd")
