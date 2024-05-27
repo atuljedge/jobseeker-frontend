@@ -19,8 +19,8 @@ const MyApplications = () => {
   useEffect(() => {
     try {
       if (user && user.role === "Employer") {
-        axios
-          .get("https://jobseeker-backend-zeta.vercel.app/api/v1/application/employer/getall", {
+        axios 
+          .get(`${import.meta.env.VITE_API_URL}v1/application/employer/getall`, {
             withCredentials: true,
           })
           .then((res) => {
@@ -28,7 +28,7 @@ const MyApplications = () => {
           });
       } else {
         axios
-          .get("https://jobseeker-backend-zeta.vercel.app/api/v1/application/jobseeker/getall", {
+          .get(`${import.meta.env.VITE_API_URL}v1/application/jobseeker/getall`, {
             withCredentials: true,
           })
           .then((res) => {
@@ -184,7 +184,7 @@ const EmployerCard = ({ element, openModal }) => {
           </p>
         </div>
         <div className="resume">
-          <img
+          <img 
             src={element.resume.url}
             alt="resume"
             onClick={() => openModal(element.resume.url)}
@@ -194,3 +194,4 @@ const EmployerCard = ({ element, openModal }) => {
     </>
   );
 };
+

@@ -47,7 +47,7 @@ const Register = () => {
   }
 
 
-  return (
+  return ( 
     <>
       <section className="authPage">
         <div className="container">
